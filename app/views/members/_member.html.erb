@@ -18,17 +18,23 @@
               <% end %>
               <div>
               <div class="row mb-3">
-                <div class="col-lg-6">
-                  <label class="form-label team-title">Member Name</label>
+                <div class="col-lg-4">
+                  <%= form.label :name, "Member Name", class: "form-label team-title" %>
                   <%= form.text_field :name, class: "form-control", placeholder: "Member Name" %>
                 </div>
-                <div class="col-lg-6">
-                  <label class="form-label team-title">Member Role</label>
+                <div class="col-lg-4">
+                  <%= form.label :role, "Member Role", class: "form-label team-title" %>
                   <%= form.text_field :role, class: "form-control", placeholder: "Member Role" %>
+                </div>
+                <div class="col-lg-4">
+                  <%= form.label :image, "Member Image", class: "form-label team-title" %>
+                  <label class="btn btn-secondary w-100">Choose image</label>
+                    <%= form.file_field :image, class: "d-none" %>
+                  </label>
                 </div>
               </div>
               <div class="col-lg 12 mb-3">
-                <label class="form-label team-title">Member Description</label>
+                <%= form.label :description, "Member Description", class: "form-label team-title" %>
                 <%= form.text_area :description, class: "form-control", placeholder: "Member Description", rows: 10 %>
               </div>
               <div class="card-body text-center pt-3">

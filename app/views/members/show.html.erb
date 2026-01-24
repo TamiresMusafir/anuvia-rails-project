@@ -4,8 +4,8 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <div class="container d-flex p-0">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item"><a href="team.html">Team</a></li>
+            <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+            <li class="breadcrumb-item"><%= link_to "Members", members_path %></li>
             <li class="breadcrumb-item active" aria-current="page"><%= @member.name %></li>
           </div>
         </ol>
@@ -17,7 +17,9 @@
           <div class="row">
             <div class="col-sm-12 col-lg-4">
               <div class="team-details-photo imagebox team-details-info">
-                <img class="img-fluid rounded shadow" src="/static-assets/images/team/team1.jpg" alt="Melissa Reis">
+                <% if @member.image.attached? %>
+                  <%= image_tag @member.image, class: "img-fluid rounded shadow", width: 300 %>
+                <% end %>
               </div>
             </div>
             <div class="col-sm-12 col-lg-8">

@@ -22,9 +22,9 @@
             <% @members.each do |member| %>
               <div class="col-12 col-md-6 col-lg-3 mb-4">
                 <div class="card shadow border-0">
-                  <a href="team-details.html">
-                    <img class="card-img-top rounded" src="/static-assets/images/team/team1.jpg" alt="Melissa Reis">
-                  </a>
+                  <% if member.image.attached? %>
+                    <%= image_tag member.image, class: "img-fluid rounded shadow", width: 300 %>
+                  <% end %>
                   <div class="card-body text-center">
                     <%= link_to member_path(member), class: "text-decoration-none" do %>
                       <h3 class="team-title"><%= member.name %></h3>
