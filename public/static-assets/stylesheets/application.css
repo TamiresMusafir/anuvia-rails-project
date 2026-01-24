@@ -1,0 +1,8 @@
+.team-title {
+  color: var(--main-dark)
+}
+
+.team-title:hover {
+  color: var(--main-lighter);
+  text-decoration: none;
+}

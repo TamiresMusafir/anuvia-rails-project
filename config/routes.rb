@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
-  resources :posts
-  root "pages#index"
-  #get "pages/index"
-  get  "about",  to: "pages#about"
-  get  "posts",  to: "posts#index" 
 
+  root "pages#index"
+
+  resources :members
+  resources :services
+  resources :posts
+
+  # get "about",            to: "pages#about"
+  # get "blog",             to: "posts#index" 
+  # get "members",          to: "members#index"
+  # get "members/new",      to: "members#new"
+  # post "members",         to: "members#create"
+  # get "members/:id",      to: "members#show",    as: "member"
+  # get "members/:id/edit", to: "members#edit",    as: "edit-member"
+  # get "services",         to: "services#index"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -15,7 +24,4 @@ Rails.application.routes.draw do
   # Render dynamic PWA files from app/views/pwa/*
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-
-  # Defines the root path route ("/")
-  # root "posts#index"
 end

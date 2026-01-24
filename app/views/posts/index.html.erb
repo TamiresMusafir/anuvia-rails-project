@@ -1,16 +1,93 @@
-<p style="color: green"><%= notice %></p>
+<div id="main">
 
-<% content_for :title, "Posts" %>
+      <!-- Breadcumbs start -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <div class="container d-flex p-0">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Blog</li>
+          </div>
+        </ol>
+      </nav>
+      <!--Breadcumbs end -->
+      <!--Blog start -->
+      <section class="blog-section">
+        <div class="container">
+          <div class="blog-section-title">
+            <h2 class="mb-4">Our latest news</h2>
+            <p class="mb-4 lead">Stay informed with our latest news. Discover whats making people talk on our blog </p>
+            <hr class="w-50 mb-4">
+          </div>
+          <div class="row">
+            <div class="card-blog col-12 col-md-6 col-lg-4">
+              <div class="blog-content shadow">
+                <a href="blog-details.html"><img class="card-img-top rounded" src="/static-assets/images/blog/blog1.jpg" alt="Card image cap"></a>
+                <div class="card-body">
+                  <a href="blog-details.html"><h4 class="blog-title">Is a hairdryer bad for your hair?</h4></a>
+                  <p class="blog-subtitle lead">Is blow-drying with hair dryer bad? Here’s what science says</p>
+                  <div class="blog-list">
+                    <ul class="d-flex justify-content-center align-items-center">
+                      <li>
+                        <i class="fa-regular fa-user"></i>
+                        <a href="team-details.html">Rachel Morg</a>
+                      </li>
+                      <li>
+                        <i class="fa-regular fa-clock"></i>
+                        <a href="">May 14, 2024</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-blog col-12 col-md-6 col-lg-4">
+              <div class="blog-content shadow">
+                <a href="blog-details.html"><img class="card-img-top rounded" src="/static-assets/images/blog/blog2.jpg" alt="Card image cap"></a>
+                <div class="card-body">
+                  <a href="blog-details.html"><h4 class="blog-title">Discover some eyeliner to do this summer</h4></a>
+                  <p class="blog-subtitle lead">Discover some new ideas for eyeliner</p>
+                  <div class="blog-list">
+                    <ul class="d-flex justify-content-center align-items-center">
+                      <li>
+                        <i class="fa-regular fa-user"></i>
+                        <a href="team-details.html">Isabel Días</a>
+                      </li>
+                      <li>
+                        <i class="fa-regular fa-clock"></i>
+                        <a href="">May 14, 2024</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-blog col-12 col-md-6 col-lg-4">
+              <div class="blog-content shadow">
+                <a href="blog-details.html"><img class="card-img-top rounded" src="/static-assets/images/blog/blog3.jpg" alt="Card image cap"></a>
+                <div class="card-body">
+                  <a href="blog-details.html"><h4 class="blog-title">How to properly care for your nail health?</h4></a>
+                  <p class="blog-subtitle lead">Some helpful tips for getting healthy nails.</p>
+                  <div class="blog-list">
+                    <ul class="d-flex justify-content-center align-items-center">
+                      <li>
+                        <i class="fa-regular fa-user"></i>
+                        <a href="team-details.html">Sara Ann</a>
+                      </li>
+                      <li>
+                        <i class="fa-regular fa-clock"></i>
+                        <a href="">May 14, 2024</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-read-more">
+            <a class="btn btn-outline-primary shadow" href="blog.html" role="button">Read More</a>
+          </div>
+        </div>
+      </section>
+      <!-- Blog end -->
 
-<h1>Posts</h1>
-
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New post", new_post_path %>
+    </div>

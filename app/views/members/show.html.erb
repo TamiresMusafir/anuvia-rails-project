@@ -1,0 +1,46 @@
+    <div id="main">
+      
+      <!-- Breadcumbs start -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <div class="container d-flex p-0">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="team.html">Team</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><%= @member.name %></li>
+          </div>
+        </ol>
+      </nav>
+      <!-- Breadcumbs end -->
+      <!-- Team details start -->
+      <section class="team-details-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-lg-4">
+              <div class="team-details-photo imagebox team-details-info">
+                <img class="img-fluid rounded shadow" src="/static-assets/images/team/team1.jpg" alt="Melissa Reis">
+              </div>
+            </div>
+            <div class="col-sm-12 col-lg-8">
+              <div class="team-details-info">
+                <h2><%= @member.name %></h2>
+                <hr>
+                <p><%= @member.description %></p>
+                <hr>
+                <div class="team-details-contact">
+                  <a href="#"><i class="fa-xl fa-brands fa-facebook"></i></a>
+                  <a href="#"><i class="fa-xl fa-brands fa-twitter"></i></a>
+                  <a href="#"><i class="fa-xl fa-brands fa-instagram"></i></a>
+                  <a href="#"><i class="fa-xl fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body text-start pt-3">
+            <%= link_to "Back to members", members_path, class: "btn btn-outline-primary", role: "button" %>
+            <%= link_to "Edit member", edit_member_path(@member), class: "btn btn-outline-primary", role: "button" %>
+            <%= button_to "Delete member", @member, method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2", role: "button" %>
+          </div>
+        </div>
+      </section>
+      <!-- Team details end -->
+    </div>

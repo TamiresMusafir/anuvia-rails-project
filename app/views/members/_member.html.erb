@@ -1,0 +1,39 @@
+
+        <div class="container">
+          <div class="team-section-title text-center mb-5">
+            <h2 class="mb-4">Create New Member</h2>
+            <hr class="w-50 mx-auto mb-4">
+          </div>
+          <div class="row">
+            <%= form_with(model: @member) do |form| %>
+              <% if @member.errors.any? %>
+                <div class="pb-3" style="color: red">
+                  <h3><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h3>
+                  <ul>
+                    <% @member.errors.each do |error| %>
+                      <li class="text-start"><%= error.full_message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+              <div>
+              <div class="row mb-3">
+                <div class="col-lg-6">
+                  <label class="form-label team-title">Member Name</label>
+                  <%= form.text_field :name, class: "form-control", placeholder: "Member Name" %>
+                </div>
+                <div class="col-lg-6">
+                  <label class="form-label team-title">Member Role</label>
+                  <%= form.text_field :role, class: "form-control", placeholder: "Member Role" %>
+                </div>
+              </div>
+              <div class="col-lg 12 mb-3">
+                <label class="form-label team-title">Member Description</label>
+                <%= form.text_area :description, class: "form-control", placeholder: "Member Description", rows: 10 %>
+              </div>
+              <div class="card-body text-center pt-3">
+                <%= form.submit "Save", class: "btn btn-secondary", role: "button" %>
+              </div>
+            <% end %>
+          </div>
+        </div>

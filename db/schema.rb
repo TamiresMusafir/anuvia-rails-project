@@ -10,8 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_01_23_034900) do
+ActiveRecord::Schema[7.2].define(version: 2026_01_23_161639) do
+  create_table "members", force: :cascade do |t|
+    t.string "name"
+    t.string "role"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.string "headline"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "title"
+    t.string "text_field1"
+    t.string "text_field2"
+    t.string "text_field3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
     t.string "title"
     t.string "headline"
     t.text "description"

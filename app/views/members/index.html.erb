@@ -1,0 +1,53 @@
+    <div id="main">
+
+      <!-- Breadcumbs start -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <div class="container d-flex p-0">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Team</li>
+          </div>
+        </ol>
+      </nav>
+      <!--Breadcumbs end -->
+      <!-- Team start -->
+      <section class="team-section">
+        <div class="container">
+          <div class="team-section-title text-center mb-5">
+            <h2 class="mb-4">Meet Us</h2>
+            <p class="lead mb-4">We are a group of innovative, experienced, and proficient teams. You will love to collaborate with us.</p>
+            <hr class="w-50 mx-auto mb-4">
+          </div>
+          <div class="row">
+            <% @members.each do |member| %>
+              <div class="col-12 col-md-6 col-lg-3 mb-4">
+                <div class="card shadow border-0">
+                  <a href="team-details.html">
+                    <img class="card-img-top rounded" src="/static-assets/images/team/team1.jpg" alt="Melissa Reis">
+                  </a>
+                  <div class="card-body text-center">
+                    <%= link_to member_path(member), class: "text-decoration-none" do %>
+                      <h3 class="team-title"><%= member.name %></h3>
+                    <% end %>
+                    <h5 class="team-subtitle"><%= member.role %></h5>
+                    <hr>
+                    <div class="d-flex justify-content-center">
+                      <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-facebook"></i></a>
+                      <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-twitter"></i></a>
+                      <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-instagram"></i></a>
+                      <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="card-body text-center">
+            <%= link_to "Create New Member", new_member_path, class: "btn btn-secondary", role: "button" %>
+          </div>
+        </div>
+      </section>
+      <!-- Team end -->
+
+    </div>
+
