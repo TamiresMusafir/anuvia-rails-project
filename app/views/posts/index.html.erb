@@ -38,9 +38,9 @@
                           <i class="fa-regular fa-user"></i>
                           <a href="team-details.html">Rachel Morg</a>
                         </li>
-                        <li>
+                        <li style="color: #6c757d;">
                           <i class="fa-regular fa-clock"></i>
-                          <a href="">May 14, 2024</a>
+                          <%= post.created_at.strftime("%d/%m/%Y at %H:%M") %>
                         </li>
                       </ul>
                     </div>

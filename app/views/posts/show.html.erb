@@ -33,7 +33,7 @@
                   </li>-->
                   <li class="me-3" style="color: #6c757d;">
                     <i class="fa-regular fa-clock"></i>
-                    <%= @post.created_at.strftime("%d/%m/%Y às %H:%M") %>
+                    <%= @post.created_at.strftime("%d/%m/%Y at %H:%M") %>
                   </li>
                   <!-- <li class="me-3">
                     <i class="fa-regular fa-comment"></i>
@@ -53,6 +53,9 @@
                 <p><%= @post.description %></p>
               </div>
             </div>
+          </div>
+          <div class="card-body text-start pt-3">
+            <%= link_to "Back to Blog", posts_path, class: "btn btn-outline-primary", role: "button" %>
           </div>
         </div>
       </section>
