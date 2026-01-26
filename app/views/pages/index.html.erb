@@ -103,89 +103,33 @@
             <hr class="w-50 mx-auto mb-4">
           </div>
           <div class="row">
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div class="card shadow border-0">
-                <a href="team-details.html">
-                  <img class="card-img-top rounded" src="/static-assets/images/team/team1.jpg" alt="Melissa Reis">
-                </a>
-                <div class="card-body text-center">
-                  <a href="team-details.html" class="text-decoration-none">
-                    <h3 class="team-title">Melissa Reis</h3>
-                  </a>
-                  <h5 class="team-subtitle">Founder</h5>
-                  <hr>
-                  <div class="d-flex justify-content-center">
-                    <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-facebook"></i></a>
-                    <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-twitter"></i></a>
-                    <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-instagram"></i></a>
-                    <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-linkedin"></i></a>
+            <% @members.each do |member| %>
+              <div class="col-12 col-md-6 col-lg-3 mb-4">
+                <div class="card shadow border-0">
+                  <% if member.image.attached? %>
+                    <%= link_to member_path(member) do %>
+                      <%= image_tag member.image, class: "img-fluid rounded shadow", width: 300 %>
+                    <% end %>
+                  <% end %>
+                  <div class="card-body text-center">
+                    <%= link_to member_path(member), class: "text-decoration-none" do%>
+                      <h3 class="team-title"><%= member.name %></h3>
+                    <% end %>
+                    <h5 class="team-subtitle"><%= member.role %></h5>
+                    <hr>
+                    <div class="d-flex justify-content-center">
+                      <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-facebook"></i></a>
+                      <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-twitter"></i></a>
+                      <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-instagram"></i></a>
+                      <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-linkedin"></i></a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div class="card shadow border-0">
-                <a href="team-details.html">
-                  <img class="card-img-top rounded" src="/static-assets/images/team/team2.jpg" alt="Isabel Días">
-                </a>
-                <div class="card-body text-center">
-                  <a href="team-details.html" class="text-decoration-none">
-                    <h3 class="team-title">Isabel Días</h3>
-                  </a>
-                  <h5 class="team-subtitle">Co-founder</h5>
-                  <hr>
-                  <div class="d-flex justify-content-center">
-                    <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-facebook"></i></a>
-                    <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-twitter"></i></a>
-                    <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-instagram"></i></a>
-                    <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div class="card shadow border-0">
-                <a href="team-details.html">
-                  <img class="card-img-top rounded" src="/static-assets/images/team/team3.jpg" alt="Rachel Morg">
-                </a>
-                <div class="card-body text-center">
-                  <a href="team-details.html" class="text-decoration-none">
-                    <h3 class="team-title">Rachel Morg</h3>
-                  </a>
-                  <h5 class="team-subtitle">Hairdresser</h5>
-                  <hr>
-                  <div class="d-flex justify-content-center">
-                    <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-facebook"></i></a>
-                    <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-twitter"></i></a>
-                    <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-instagram"></i></a>
-                    <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div class="card shadow border-0">
-                <a href="team-details.html">
-                  <img class="card-img-top rounded" src="/static-assets/images/team/team4.jpg" alt="Sara Ann">
-                </a>
-                <div class="card-body text-center">
-                  <a href="team-details.html" class="text-decoration-none">
-                    <h3 class="team-title">Sara Ann</h3>
-                  </a>
-                  <h5 class="team-subtitle">Manicure</h5>
-                  <hr>
-                  <div class="d-flex justify-content-center">
-                    <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-facebook"></i></a>
-                    <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-twitter"></i></a>
-                    <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-instagram"></i></a>
-                    <a href="#" class="mx-2"><i class="fa-xl fa-brands fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <% end %>
           </div>
           <div class="text-center mt-4">
-            <a class="btn btn-outline-primary shadow" href="team.html" role="button">Read More</a>
+            <%= link_to "Read More", members_path, class: "btn btn-outline-primary shadow" %>
           </div>
         </div>
       </section>
@@ -199,60 +143,33 @@
             <hr class="w-50 mx-auto mb-4">
           </div>
           <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-              <div class="card shadow border-0">
-                <img class="card-img-top" src="/static-assets/images/services/services1.jpg" alt="Manicure">
-                <div class="card-body text-center">
-                  <a href="#" class="text-decoration-none">
-                    <h4 class="services-title">Manicure</h4>
-                  </a>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Hand Exfoliation and Moisturization</li>
-                  <li class="list-group-item">Nail Cutting and Shaping</li>
-                  <li class="list-group-item">Cuticle Treatment</li>
-                </ul>
-                <div class="card-body text-center">
-                  <a class="btn btn-secondary shadow" href="services.html" role="button">Read More</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-              <div class="card shadow border-0">
-                <img class="card-img-top" src="/static-assets/images/services/services2.jpg" alt="Pedicure">
-                <div class="card-body text-center">
-                  <a href="#" class="text-decoration-none">
-                    <h4 class="services-title">Pedicure</h4>
-                  </a>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Foot Exfoliation and Moisturization</li>
-                  <li class="list-group-item">Removal of Calluses and Hard Skin</li>
-                  <li class="list-group-item">Cuticle Treatment</li>
-                </ul>
-                <div class="card-body text-center">
-                  <a class="btn btn-secondary shadow" href="services.html" role="button">Read More</a>
+            <% @services.each do |service| %>
+              <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card shadow border-0">
+                  <% if service.image.attached? %>
+                    <%= link_to service_path(service) do %>
+                      <%= image_tag service.image, class: "img-fluid rounded shadow" %>
+                    <% end %>
+                  <% end %>
+                  <div class="card-body text-center">
+                    <a href="#" class="text-decoration-none">
+                      <h4 class="services-title"><%= service.title %></h4>
+                    </a>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><%= service.text_field1 %></li>
+                    <li class="list-group-item"><%= service.text_field2 %></li>
+                    <li class="list-group-item"><%= service.text_field3 %></li>
+                  </ul>
+                  <div class="card-body text-center">
+                    <%= link_to "Read More", services_path, class: "btn btn-outline-primary shadow" %>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-              <div class="card shadow border-0">
-                <img class="card-img-top" src="/static-assets/images/services/services3.jpg" alt="Spa Day">
-                <div class="card-body text-center">
-                  <a href="#" class="text-decoration-none">
-                    <h4 class="services-title">Spa Day</h4>
-                  </a>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Complete day on a Spa</li>
-                  <li class="list-group-item">Body Hand and Foot Massage</li>
-                  <li class="list-group-item">Spa Therapy</li>
-                </ul>
-                <div class="card-body text-center">
-                  <a class="btn btn-secondary shadow" href="services.html" role="button">Read More</a>
-                </div>
-              </div>
-            </div>
+            <% end %>
+          </div>
+          <div class="text-center mt-4">
+            <%= link_to "Read More", services_path, class: "btn btn-primary shadow" %>
           </div>
         </div>
       </section>

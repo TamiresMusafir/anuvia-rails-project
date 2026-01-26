@@ -39,8 +39,8 @@
           </div>
           <div class="card-body text-start pt-3">
             <%= link_to "Back to members", members_path, class: "btn btn-outline-primary", role: "button" %>
-            <%= link_to "Edit member", edit_member_path(@member), class: "btn btn-outline-primary", role: "button" %>
-            <%= button_to "Delete member", @member, method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2", role: "button" %>
+            <%= link_to "Edit #{@member.name}", edit_member_path(@member), class: "btn btn-outline-primary", role: "button" %>
+            <%= button_to "Delete #{@member.name}", @member, method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2", role: "button" %>
           </div>
         </div>
       </section>

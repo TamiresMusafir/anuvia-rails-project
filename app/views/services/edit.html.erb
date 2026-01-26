@@ -1,12 +1,24 @@
-<% content_for :title, "Editing service" %>
-
-<h1>Editing service</h1>
-
-<%= render "form", service: @service %>
-
-<br>
-
-<div>
-  <%= link_to "Show this service", @service %> |
-  <%= link_to "Back to services", services_path %>
-</div>
+      <!-- Breadcumbs start -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <div class="container d-flex p-0">
+            <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+            <li class="breadcrumb-item"><%= link_to "services", services_path %></li>
+            <li class="breadcrumb-item"><%= link_to @service.title, @service %></li>
+            <li class="breadcrumb-item active" aria-current="page">Edit <%= @service.title %></li>
+          </div>
+        </ol>
+      </nav>
+      <section class="team-section">
+        <div class="container">
+          <div class="team-section-title text-center mb-5">
+            <h2 class="mb-4">Edit <%= @service.title %></h2>
+            <hr class="w-50 mx-auto mb-4">
+          </div>
+          <%= render 'form' %>
+        </div>
+        <div class="card-body text-start pt-3">
+          <%= link_to "Back to Services", services_path, class: "btn btn-outline-primary", role: "button" %>
+          <%= link_to "Back to #{@service.title} page", @service, class: "btn btn-outline-primary", role: "button" %>
+        </div>
+      </section>

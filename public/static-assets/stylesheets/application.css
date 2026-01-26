@@ -6,3 +6,19 @@
   color: var(--main-lighter);
   text-decoration: none;
 }
+
+.services-title {
+  color: var(--main-dark)
+}
+
+.services-title:hover {
+  color: var(--main-lighter);
+  text-decoration: none;
+}
+
+.btn-no-link {
+  background: none;    /* sem fundo */
+  border: none;        /* sem borda */
+  padding-left: 5px;
+    color: #6c757d;
+}

@@ -40,114 +40,31 @@
             <hr class="w-50 mx-auto mb-4">
           </div>
           <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-              <div class="card shadow border-0">
-                <img class="card-img-top" src="/static-assets/images/services/services1.jpg" alt="Manicure">
-                <div class="card-body text-center">
-                  <a href="#" class="text-decoration-none">
-                    <h4 class="services-title">Manicure</h4>
-                  </a>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Hand Exfoliation and Moisturization</li>
-                  <li class="list-group-item">Nail Cutting and Shaping</li>
-                  <li class="list-group-item">Cuticle Treatment</li>
-                </ul>
-                <div class="card-body text-center">
-                  <a class="btn btn-secondary shadow" href="services.html" role="button">Read More</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-              <div class="card shadow border-0">
-                <img class="card-img-top" src="/static-assets/images/services/services2.jpg" alt="Pedicure">
-                <div class="card-body text-center">
-                  <a href="#" class="text-decoration-none">
-                    <h4 class="services-title">Pedicure</h4>
-                  </a>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Foot Exfoliation and Moisturization</li>
-                  <li class="list-group-item">Removal of Calluses and Hard Skin</li>
-                  <li class="list-group-item">Cuticle Treatment</li>
-                </ul>
-                <div class="card-body text-center">
-                  <a class="btn btn-secondary shadow" href="services.html" role="button">Read More</a>
+            <% @services.each do |service| %>
+              <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card shadow border-0">
+                  <%= link_to service_path(service) do %>
+                      <%= image_tag service.image, class: "img-fluid rounded shadow" %>
+                    <% end %>
+                  <div class="card-body text-center">
+                    <a href="#" class="text-decoration-none">
+                      <h4 class="services-title"><%= service.title %></h4>
+                    </a>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><%= service.text_field1 %></li>
+                    <li class="list-group-item"><%= service.text_field2 %></li>
+                    <li class="list-group-item"><%= service.text_field3 %></li>
+                  </ul>
+                  <div class="card-body text-center">
+                    <%= link_to "Read More", service_path(service), class: "btn btn-secondary shadow", role: "button" %>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-              <div class="card shadow border-0">
-                <img class="card-img-top" src="/static-assets/images/services/services3.jpg" alt="Spa Day">
-                <div class="card-body text-center">
-                  <a href="#" class="text-decoration-none">
-                    <h4 class="services-title">Spa Day</h4>
-                  </a>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Complete day on a Spa</li>
-                  <li class="list-group-item">Body Hand and Foot Massage</li>
-                  <li class="list-group-item">Spa Therapy</li>
-                </ul>
-                <div class="card-body text-center">
-                  <a class="btn btn-secondary shadow" href="services.html" role="button">Read More</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-              <div class="card shadow border-0">
-                <img class="card-img-top" src="/static-assets/images/services/services4.jpg" alt="Spa Day">
-                <div class="card-body text-center">
-                  <a href="#" class="text-decoration-none">
-                    <h4 class="services-title">Hair Cut</h4>
-                  </a>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Gradient Cut</li>
-                  <li class="list-group-item">Peaked Cut</li>
-                  <li class="list-group-item">Fringe Cut</li>
-                </ul>
-                <div class="card-body text-center">
-                  <a class="btn btn-secondary shadow" href="services.html" role="button">Read More</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-              <div class="card shadow border-0">
-                <img class="card-img-top" src="/static-assets/images/services/services5.jpg" alt="Spa Day">
-                <div class="card-body text-center">
-                  <a href="#" class="text-decoration-none">
-                    <h4 class="services-title">Capillary Hydration</h4>
-                  </a>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Application of Moisturizing Products</li>
-                  <li class="list-group-item">Deep cleaning of hair strands</li>
-                  <li class="list-group-item">Hair Nutrition</li>
-                </ul>
-                <div class="card-body text-center">
-                  <a class="btn btn-secondary shadow" href="services.html" role="button">Read More</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-              <div class="card shadow border-0">
-                <img class="card-img-top" src="/static-assets/images/services/services6.jpg" alt="Spa Day">
-                <div class="card-body text-center">
-                  <a href="#" class="text-decoration-none">
-                    <h4 class="services-title">Hair Styling</h4>
-                  </a>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Brushing and Styling</li>
-                  <li class="list-group-item">Braids and Hairstyles</li>
-                  <li class="list-group-item">Straightening</li>
-                </ul>
-                <div class="card-body text-center">
-                  <a class="btn btn-secondary shadow" href="services.html" role="button">Read More</a>
-                </div>
-              </div>
-            </div>
+            <% end %>
+          </div>
+          <div class="card-body text-center">
+            <%= link_to "Create New Service", new_service_path, class: "btn btn-primary", role: "button" %>
           </div>
         </div>
       </section>
@@ -175,14 +92,3 @@
 
       <!-- Appointment end -->
     </div>
-
-# <div id="services">
-#   <% @services.each do |service| %>
-#     <%= render service %>
-#     <p>
-#       <%= link_to "Show this service", service %>
-#     </p>
-#   <% end %>
-# </div>
-
-# 

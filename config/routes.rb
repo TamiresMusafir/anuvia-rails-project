@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :services
   resources :posts
 
-  # get "about",            to: "pages#about"
+  get "about",            to: "pages#about"
   # get "blog",             to: "posts#index" 
   # get "members",          to: "members#index"
   # get "members/new",      to: "members#new"
