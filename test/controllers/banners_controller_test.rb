@@ -17,7 +17,7 @@ class BannersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create banner" do
     assert_difference("Banner.count") do
-      post banners_url, params: { banner: { active: @banner.active, button_link: @banner.button_link, image: @banner.image, subtitle: @banner.subtitle, title: @banner.title } }
+      post banners_url, params: { banner: { active: @banner.active, button_link: @banner.button_link, button_text: @banner.button_text, image: @banner.image, subtitle: @banner.subtitle, title: @banner.title } }
     end
 
     assert_redirected_to banner_url(Banner.last)
@@ -34,7 +34,7 @@ class BannersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update banner" do
-    patch banner_url(@banner), params: { banner: { active: @banner.active, button_link: @banner.button_link, image: @banner.image, subtitle: @banner.subtitle, title: @banner.title } }
+    patch banner_url(@banner), params: { banner: { active: @banner.active, button_link: @banner.button_link, button_text: @banner.button_text, image: @banner.image, subtitle: @banner.subtitle, title: @banner.title } }
     assert_redirected_to banner_url(@banner)
   end
 
