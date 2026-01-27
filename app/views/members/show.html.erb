@@ -26,7 +26,7 @@
               <div class="team-details-info">
                 <h2><%= @member.name %></h2>
                 <hr>
-                <p><%= @member.description %></p>
+                <p><%= simple_format(@member.description) %></p>
                 <hr>
                 <div class="team-details-contact">
                   <a href="#"><i class="fa-xl fa-brands fa-facebook"></i></a>
