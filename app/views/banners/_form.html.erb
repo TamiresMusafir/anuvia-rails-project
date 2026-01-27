@@ -1,47 +1,48 @@
-<%= form_with(model: banner) do |form| %>
-  <% if banner.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(banner.errors.count, "error") %> prohibited this banner from being saved:</h2>
-
-      <ul>
-        <% banner.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :subtitle, style: "display: block" %>
-    <%= form.text_field :subtitle %>
-  </div>
-
-  <div>
-    <%= form.label :image, style: "display: block" %>
-    <%= form.text_field :image %>
-  </div>
-
-  <div>
-    <%= form.label :button_text, style: "display: block" %>
-    <%= form.text_field :button_text %>
-  </div>
-
-  <div>
-    <%= form.label :button_link, style: "display: block" %>
-    <%= form.text_field :button_link %>
-  </div>
-
-  <div>
-    <%= form.label :active, style: "display: block" %>
-    <%= form.check_box :active %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+<div class="row">
+            <%= form_with(model: @banner) do |form| %>
+              <% if @banner.errors.any? %>
+                <div class="pb-3" style="color: red">
+                  <h3><%= pluralize(@banner.errors.count, "error") %> prohibited this banner from being saved:</h3>
+                  <ul>
+                    <% @banner.errors.each do |error| %>
+                      <li class="text-start"><%= error.full_message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+              <div>
+              <div class="row mb-3">
+                <div class="col-lg-4">
+                  <%= form.label :title, "Banner Title", class: "form-label team-title" %>
+                  <%= form.text_field :title, class: "form-control", placeholder: "Banner Title" %>
+                </div>
+                <div class="col-lg-4">
+                  <%= form.label :subtitle, "Banner Subtitle", class: "form-label team-title" %>
+                  <%= form.text_field :subtitle, class: "form-control", placeholder: "Banner Subtitle" %>
+                </div>
+                <div class="col-lg-4">
+                  <%= form.label :image, "Banner Image", class: "form-label team-title", for: nil %>
+                  <label class="btn btn-secondary w-100">Choose image
+                    <%= form.file_field :image, class: "d-none" %>
+                  </label>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-lg-4">
+                  <%= form.label :button_text, "Banner Button Text", class: "form-label team-title" %>
+                  <%= form.text_field :button_text, class: "form-control", placeholder: "Banner Button Text" %>
+                </div>
+                <div class="col-lg-4">
+                  <%= form.label :button_link, "Banner Button Link", class: "form-label team-title" %>
+                  <%= form.text_field :button_link, class: "form-control", placeholder: "Banner Button Link" %>
+                </div>
+                 <div class="col-lg-4">
+                  <%= form.label :active, "Banner Active?", class: "form-label team-title" %>
+                  <%= form.check_box :active %>
+                </div>
+              </div>
+              <div class="card-body text-center pt-3">
+                <%= form.submit "Save", class: "btn btn-secondary", role: "button" %>
+              </div>
+            <% end %>
+          </div> 

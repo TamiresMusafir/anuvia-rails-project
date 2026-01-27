@@ -17,7 +17,6 @@ class BannersTest < ApplicationSystemTestCase
     check "Active" if @banner.active
     fill_in "Button link", with: @banner.button_link
     fill_in "Button text", with: @banner.button_text
-    fill_in "Image", with: @banner.image
     fill_in "Subtitle", with: @banner.subtitle
     fill_in "Title", with: @banner.title
     click_on "Create Banner"
@@ -33,7 +32,6 @@ class BannersTest < ApplicationSystemTestCase
     check "Active" if @banner.active
     fill_in "Button link", with: @banner.button_link
     fill_in "Button text", with: @banner.button_text
-    fill_in "Image", with: @banner.image
     fill_in "Subtitle", with: @banner.subtitle
     fill_in "Title", with: @banner.title
     click_on "Update Banner"

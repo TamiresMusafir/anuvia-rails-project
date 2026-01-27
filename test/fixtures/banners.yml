@@ -3,7 +3,6 @@
 one:
   title: MyString
   subtitle: MyString
-  image: MyString
   button_text: MyString
   button_link: MyString
   active: false
@@ -11,7 +10,6 @@ one:
 two:
   title: MyString
   subtitle: MyString
-  image: MyString
   button_text: MyString
   button_link: MyString
   active: false
