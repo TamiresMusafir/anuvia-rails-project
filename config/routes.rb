@@ -1,13 +1,22 @@
 Rails.application.routes.draw do
-  resources :banners
+  namespace :admin do
+    root "dashboard#index"
+    resources :banners
+    resources :members
+    resources :services
+    resources :posts
+  end
 
   root "pages#index"
 
+  resources :banners
   resources :members
   resources :services
   resources :posts
 
   get "about",            to: "pages#about"
+  get "contact",          to: "pages#contact"
+  
   # get "blog",             to: "posts#index" 
   # get "members",          to: "members#index"
   # get "members/new",      to: "members#new"

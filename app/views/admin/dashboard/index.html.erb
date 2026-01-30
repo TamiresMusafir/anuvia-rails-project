@@ -1,0 +1,45 @@
+		<div id="main">
+			<!-- Breadcumbs start -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <div class="container d-flex p-0">
+            <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+            <li class="breadcrumb-item active" aria-current="page">Admin</li>
+          </div>
+        </ol>
+      </nav>
+      <!-- Breadcumbs end -->
+			<div class="container">
+				<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Modules</th>
+						<th scope="col"></th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><%= banners_path %></th>
+						<td><%= link_to "View Banners", banners_path, class: "btn btn-secondary", role: "button" %></td>
+						<td><%= link_to "Create New Banner", new_banner_path, class: "btn btn-secondary", role: "button" %></td>
+					</tr>
+					<tr>
+						<th scope="row"><%= members_path %></th>
+						<td><%= link_to "View Members", members_path, class: "btn btn-secondary", role: "button" %></td>
+						<td><%= link_to "Create New Member", new_member_path, class: "btn btn-secondary", role: "button" %></td>
+					</tr>
+					<tr>
+						<th scope="row"><%= services_path %></th>
+						<td><%= link_to "View Services", services_path, class: "btn btn-secondary", role: "button" %></td>
+						<td><%= link_to "Create New Service", new_service_path, class: "btn btn-secondary", role: "button" %></td>
+					</tr>
+					<tr>
+						<th scope="row"><%= posts_path %></th>
+						<td><%= link_to "View Postss", posts_path, class: "btn btn-secondary", role: "button" %></td>
+						<td><%= link_to "Create New Posts", new_post_path, class: "btn btn-secondary", role: "button" %></td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+		</div>
