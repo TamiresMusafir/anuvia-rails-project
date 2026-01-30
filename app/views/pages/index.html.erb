@@ -162,7 +162,7 @@
           <div class="blog-section-title">
             <h2 class="mb-4">Our latest news</h2>
             <p class="mb-4 lead">Stay informed with our latest news. Discover whats making people talk on our blog </p>
-            <hr class="w-50 mb-4">
+            <hr class="w-50 mx-auto mb-4">
           </div>
           <div class="row">
             <% @posts.each do |post| %>
@@ -196,7 +196,7 @@
             <% end %>
           </div>
           <div class="btn-read-more">
-            <a class="btn btn-outline-primary shadow" href="blog.html" role="button">Read More</a>
+            <%= link_to "Read More", posts_path, class: "btn btn-outline-primary shadow" %>
           </div>
         </div>
       </section>
