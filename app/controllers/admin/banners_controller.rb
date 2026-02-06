@@ -1,4 +1,4 @@
-class Admin::BannersController < ApplicationController
+class Admin::BannersController < AdminController
   def index
   end
 end
