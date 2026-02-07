@@ -7,7 +7,7 @@
           <%= render 'form' %>
         </div>
         <div class="card-body text-start pt-3">
-          <%= link_to "Back to Posts", admin_posts_path, class: "btn btn-outline-primary", role: "button" %>
-          <%= button_to "Delete this Post", @post, method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2", role: "button" %>
+          <%= link_to "Back to Banners", admin_banners_path, class: "btn btn-outline-primary", role: "button" %>
+          <%= button_to "Delete this Banner", admin_banner_path(@banner), method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2", role: "button" %>
         </div>
       </section>

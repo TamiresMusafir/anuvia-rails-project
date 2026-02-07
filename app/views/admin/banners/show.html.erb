@@ -1,0 +1,32 @@
+    <div id="main">
+      <div class="dashboard-section">
+				<div class="dashboard-container">
+          <div class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <% if @banner.image.attached? %>
+                  <%= image_tag @banner.image, class: "d-block w-100" %>
+                <% end %>
+                <div class="container">
+                  <div class="carousel-text">
+                    <h1><%= @banner.title %></h1>
+                    <h3><%= @banner.subtitle %></h3>
+
+                    <% if @banner.button_link.present? %>
+                      <%= link_to @banner.button_text.presence, @banner.button_link, class: "btn btn-secondary shadow-sm" %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body text-start pt-3">
+            <%= link_to "Back to Banners", admin_banners_path, class: "btn btn-outline-primary", role: "button" %>
+            <%= link_to "Edit this Banner", edit_admin_banner_path(@banner), class: "btn btn-outline-primary", role: "button" %>
+            <%= link_to "View this Banner", @banner, class: "btn btn-outline-primary", role: "button" %>
+            <%= button_to "Delete this Banner", admin_banner_path(@banner), method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2", role: "button" %>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -27,8 +27,8 @@
           <div class="card-body text-start pt-3">
             <%= link_to "Back to members", admin_members_path, class: "btn btn-outline-primary", role: "button" %>
             <%= link_to "Edit #{@member.name}", edit_admin_member_path(@member), class: "btn btn-outline-primary", role: "button" %>
-            <%= link_to "View #{@member.name} page", @member, class: "btn btn-outline-primary", role: "button" %>
-            <%= button_to "Delete #{@member.name}", @member, method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2", role: "button" %>
+            <%= link_to "View #{@member.name} Page", @member, class: "btn btn-outline-primary", role: "button" %>
+            <%= button_to "Delete #{@member.name}", admin_member_path(@member), method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2", role: "button" %>
           </div>
         </div>
       </div>

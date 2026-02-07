@@ -9,6 +9,6 @@
         </div>
         <div class="card-body text-start pt-3">
           <%= link_to "Back to Services", admin_services_path, class: "btn btn-outline-primary", role: "button" %>
-          <%= button_to "Delete #{@member.name}", @member, method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2", role: "button" %>
+          <%= button_to "Delete #{@service.title}", admin_service_path(@service), method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2", role: "button" %>
         </div>
       </div>
