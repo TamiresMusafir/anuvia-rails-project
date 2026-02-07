@@ -1,19 +1,8 @@
-<div id="main">
-
-      <!-- Breadcumbs start -->
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <div class="container d-flex p-0">
-            <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
-            <li class="breadcrumb-item"><%= link_to "Blog", posts_path %></li>
-            <li class="breadcrumb-item active" aria-current="page"><%= @post.title %></li>
-          </div>
-        </ol>
-      </nav>
-      <!-- Breadcumbs end -->
+    <div id="main">
+    
       <!-- Blog details start -->
-      <section class="blog-details-section">
-        <div class="container">
+      <div class="dashboard-section">
+				<div class="dashboard-container">
           <div class="row">
             <div class="col-lg-12">
               <% if @post.image.attached? %>
@@ -47,7 +36,10 @@
             </div>
           </div>
           <div class="card-body text-start pt-3">
-            <%= link_to "Back to Blog", posts_path, class: "btn btn-outline-primary", role: "button" %>
+            <%= link_to "Back to Posts", admin_posts_path, class: "btn btn-outline-primary", role: "button" %>
+            <%= link_to "Edit this Post", edit_admin_post_path(@post), class: "btn btn-outline-primary", role: "button" %>
+            <%= link_to "View this Post Page", @post, class: "btn btn-outline-primary", role: "button" %>
+            <%= button_to "Delete This Post", @post, method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2", role: "button" %>
           </div>
         </div>
-      </section>
+      </div>

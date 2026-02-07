@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"> 
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="/static-assets/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/static-assets/stylesheets/elegant-icons.css">
+    <link rel="stylesheet" href="/static-assets/stylesheets/magnific-popup.css">
+    <link rel="stylesheet" href="/static-assets/stylesheets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static-assets/stylesheets/slicknav.min.css">
+
+    <!-- Site css -->
+    <link rel="stylesheet" href="/static-assets/stylesheets/style.css">
+    <link rel="stylesheet" href="/static-assets/stylesheets/admin.css">
+
+    <title>Anuvia - Beauty Spa</title>
+  </head>
+	<body>
+
+		<div class="admin-layout">
+
+			<aside class="admin-sidebar">
+				<div class="sidebar-header">
+					<h2>Admin</h2>
+				</div>
+
+				<div class="sidebar-home">
+					<%= link_to "Ver site", root_path %>
+				</div>
+				<nav class="sidebar-nav">
+					<ul>
+						<li>
+							<%= link_to "Dashboard", admin_root_path %>
+						</li>
+						<li>
+							<%= link_to "Banners", admin_banners_path %>
+						</li>
+						<li>
+							<%= link_to "Posts", admin_posts_path %>
+						</li>
+						<li>
+							<%= link_to "Members", admin_members_path %>
+						</li>
+						<li>
+							<%= link_to "Services", admin_services_path %>
+						</li>
+					</ul>
+				</nav>
+				<div class="sidebar-footer">
+					<h5>Perfil</h5>
+				</div>
+			</aside>
+
+			<div class="admin-content">
+				<%= yield %>
+			</div>
+		</div>
+
+	</body>
+
+</html>

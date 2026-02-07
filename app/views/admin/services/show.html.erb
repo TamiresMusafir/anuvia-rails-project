@@ -1,0 +1,33 @@
+    <div id="main">
+      
+      <div class="dashboard-section">
+				<div class="dashboard-container">
+          <div class="row">
+            <div class="col-sm-12 col-lg-4">
+              <div class="team-details-photo imagebox team-details-info">
+                <% if @service.image.attached? %>
+                  <%= image_tag @service.image, class: "img-fluid rounded shadow", width: 300 %>
+                <% end %>
+              </div>
+            </div>
+            <div class="col-sm-12 col-lg-8">
+              <div class="team-details-info">
+                <h2><%= @service.title %></h2>
+                <hr>
+                <h4 class="services-title">Details:</h4>
+                <p><%= @service.text_field1 %></p>
+                <p><%= @service.text_field2 %></p>
+                <p><%= @service.text_field3 %></p>
+                <hr>
+              </div>
+            </div>
+          </div>
+          <div class="card-body text-start pt-3">
+            <%= link_to "Back to services", admin_services_path, class: "btn btn-outline-primary", role: "button" %>
+            <%= link_to "Edit #{@service.title}", edit_admin_service_path(@service), class: "btn btn-outline-primary", role: "button" %>
+            <%= link_to "View #{@service.title} Page", @service, class: "btn btn-outline-primary", role: "button" %>
+            <%= button_to "Delete #{@service.title}", @service, method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2", role: "button" %>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,86 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: 240px;
+  background: var(--main-darker);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header h2{
+	font-weight: bold;
+}
+
+.sidebar-header {
+  padding: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 10px 0;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-nav li a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar-nav li a:hover {
+  background: rgba(255,255,255,.08);
+  color: var(--main-light);
+}
+
+.sidebar-home {
+  padding: 15px 20px;
+  border-top: 1px solid rgba(255,255,255,.1);
+	border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.sidebar-home a {
+	color: var(--main-light);
+	text-decoration: none;
+}
+
+.sidebar-footer {
+  padding: 15px 20px;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.admin-content {
+	flex: 1;
+}
+
+.dashboard-container {
+	padding: 20px;
+}
+
+.dashboard-title h2 {
+	font-weight: bold;
+	color: var(--main-dark);
+}
+
+.dashboard-body {
+  margin-top: 30px;
+}
+
+.dashboard-list {
+  padding: 15px;
+  padding-left: 0;
+  border-top: 1px solid var(--main-dark);
+	border-bottom: 1px solid var(--main-dark);
+  margin-bottom: 10px;
+}

@@ -1,19 +1,6 @@
     <div id="main">
-      
-      <!-- Breadcumbs start -->
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <div class="container d-flex p-0">
-            <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
-            <li class="breadcrumb-item"><%= link_to "Members", members_path %></li>
-            <li class="breadcrumb-item active" aria-current="page"><%= @member.name %></li>
-          </div>
-        </ol>
-      </nav>
-      <!-- Breadcumbs end -->
-      <!-- Team details start -->
-      <section class="team-details-section">
-        <div class="container">
+      <div class="dashboard-section">
+				<div class="dashboard-container">
           <div class="row">
             <div class="col-sm-12 col-lg-4">
               <div class="team-details-photo imagebox team-details-info">
@@ -38,9 +25,11 @@
             </div>
           </div>
           <div class="card-body text-start pt-3">
-            <%= link_to "Back to members", members_path, class: "btn btn-outline-primary", role: "button" %>
+            <%= link_to "Back to members", admin_members_path, class: "btn btn-outline-primary", role: "button" %>
+            <%= link_to "Edit #{@member.name}", edit_admin_member_path(@member), class: "btn btn-outline-primary", role: "button" %>
+            <%= link_to "View #{@member.name} page", @member, class: "btn btn-outline-primary", role: "button" %>
+            <%= button_to "Delete #{@member.name}", @member, method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2", role: "button" %>
           </div>
         </div>
-      </section>
-      <!-- Team details end -->
+      </div>
     </div>

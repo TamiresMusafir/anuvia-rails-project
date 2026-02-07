@@ -1,0 +1,15 @@
+      <div id="main">
+        <div class="dashboard-section">
+					<div class="dashboard-container">
+            <div class="team-section-title text-center mb-5">
+              <h2 class="mb-4">Edit <%= @member.name %></h2>
+              <hr class="w-50 mx-auto mb-4">
+            </div>
+            <%= render 'form' %>
+          </div>
+          <div class="card-body text-start pt-3">
+            <%= link_to "Back to Posts", admin_members_path, class: "btn btn-outline-primary", role: "button" %>
+            <%= button_to "Delete #{@member.name}", @member, method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2", role: "button" %>
+          </div>
+        </div>
+      </div>

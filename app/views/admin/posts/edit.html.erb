@@ -1,0 +1,15 @@
+      <div id="main">
+        <div class="dashboard-section">
+					<div class="dashboard-container">
+            <div class="team-section-title text-center mb-5">
+              <h2 class="mb-4">Edit Post</h2>
+              <hr class="w-50 mx-auto mb-4">
+            </div>
+            <%= render 'form' %>
+          </div>
+          <div class="card-body text-start pt-3">
+            <%= link_to "Back to Posts", admin_posts_path, class: "btn btn-outline-primary", role: "button" %>
+            <%= link_to "Delete this post", admin_post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-primary", role: "button" %>
+          </div>
+        </div>
+      </div>

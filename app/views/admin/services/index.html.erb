@@ -1,0 +1,36 @@
+			<div id="main">
+				<div class="dashboard-section">
+					<div class="dashboard-container">
+						
+						<div class="dashboard-title">
+							<h2>Services</h2>
+						</div>
+
+						<div class="dashboard-body">
+							<%= link_to "Create New Service", new_admin_service_path, class: "btn btn-outline-primary mb-3" %>
+							<% @services.each do |service| %>
+								<div class="dashboard-list d-flex justify-content-between align-items-center mb-2 p-2 border rounded">
+									
+									<span><%= service.title %></span>
+
+									<div class="dashboard-actions">
+										<%= link_to admin_service_path(service), class: "btn btn-sm btn-outline-primary me-1" do %>
+											<i class="fa-solid fa-eye"></i> Visualizar
+										<% end %>
+
+										<%= link_to edit_admin_service_path(service), class: "btn btn-sm btn-outline-warning me-1" do %>
+											<i class="fa-solid fa-pencil"></i> Editar
+										<% end %>
+
+										<%= link_to admin_service_path(service), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" do %>
+											<i class="fa-solid fa-trash"></i> Deletar
+										<% end %>
+									</div>
+
+								</div>
+							<% end %>
+						</div>
+
+					</div>
+				</div>
+			</div>

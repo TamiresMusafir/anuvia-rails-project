@@ -1,4 +1,4 @@
-<div id="main">
+    <div id="main">
 
       <!-- Breadcumbs start -->
       <nav aria-label="breadcrumb">
@@ -48,7 +48,9 @@
                     <% end %>
                   <div class="card-body text-center">
                     <a href="#" class="text-decoration-none">
-                      <h4 class="services-title"><%= service.title %></h4>
+                      <%= link_to service do %>
+                        <h4 class="services-title"><%= service.title %></h4>
+                      <% end %>
                     </a>
                   </div>
                   <ul class="list-group list-group-flush">
@@ -62,9 +64,6 @@
                 </div>
               </div>
             <% end %>
-          </div>
-          <div class="card-body text-center">
-            <%= link_to "Create New Service", new_service_path, class: "btn btn-primary", role: "button" %>
           </div>
         </div>
       </section>
