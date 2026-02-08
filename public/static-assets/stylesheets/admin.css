@@ -84,3 +84,7 @@
 	border-bottom: 1px solid var(--main-dark);
   margin-bottom: 10px;
 }
+
+.sidebar-footer .user-text {
+  font-size: 10px;
+}
