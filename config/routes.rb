@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :members
     resources :services
     resources :posts
+    get "/profile", to: "users#profile", as: :profile
+    patch "/profile", to: "users#update_profile"
   end
 
   root "pages#index"

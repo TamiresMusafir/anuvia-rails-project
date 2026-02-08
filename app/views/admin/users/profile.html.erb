@@ -1,0 +1,44 @@
+      <div id="main">
+				<div class="dashboard-section">
+					<div class="dashboard-container">
+						<div class="dashboard-title">
+							<h2>My Profile</h2>
+						</div>
+            <% if flash[:alert] %>
+              <p class="alert alert-danger"><%= flash[:alert] %></p>
+            <% end %>
+
+            <%= form_with model: @user, url: admin_profile_path, local: true, html: { multipart: true } do |form| %>
+              <div class="mb-3">
+                <% if @user.image.attached? %>
+                  <%= image_tag @user.image, class: "rounded-circle mb-2", size: "100x100", style: "object-fit: cover;" %>
+                <% end %>
+                <br>
+                <div class="row mb-4">
+                  <div class="col-md-6 mb-4">
+                    <%= form.label :email, class: "team-title" %>
+                    <%= form.email_field :email, class: "form-control", required: true %>
+                  </div>
+                  <div class="col-md-6">
+                    <%= form.label :image, "Update Image", class: "team-title" %>
+                    <label class="btn btn-secondary w-100">Choose image
+                      <%= form.file_field :image, class: "d-none" %>
+                    </label>
+                  </div>
+                  <div class="col-md-6">
+                    <%= form.label :password, "New Password", class: "team-title" %>
+                    <%= form.password_field :password, class: "form-control", autocomplete: "new-password" %>
+                  </div>
+                  <div class="col-md-6">
+                    <%= form.label :password_confirmation, "Password Confirmation", class: "team-title" %>
+                    <%= form.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <%= form.submit "Salvar alterações", class: "btn btn-secondary" %>
+              </div>
+            <% end %>
+					</div>
+				</div>
+			</div>
