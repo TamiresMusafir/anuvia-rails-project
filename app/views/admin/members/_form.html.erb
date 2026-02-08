@@ -13,15 +13,15 @@
               <div>
               <div class="row mb-3">
                 <div class="col-lg-4">
-                  <%= form.label :name, "Member Name", class: "form-label team-title" %>
+                  <%= form.label :name, "Member Name", class: "team-title" %>
                   <%= form.text_field :name, class: "form-control", placeholder: "Member Name" %>
                 </div>
                 <div class="col-lg-4">
-                  <%= form.label :role, "Member Role", class: "form-label team-title" %>
+                  <%= form.label :role, "Member Role", class: "team-title" %>
                   <%= form.text_field :role, class: "form-control", placeholder: "Member Role" %>
                 </div>
                 <div class="col-lg-4">
-                  <%= form.label :image, "Member Image", class: "form-label team-title", for: nil %>
+                  <%= form.label :image, "Member Image", class: "team-title" %>
                   <label class="btn btn-secondary w-100">Choose image
                     <%= form.file_field :image, class: "d-none" %>
                   </label>
