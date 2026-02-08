@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   namespace :admin do
     root "dashboard#index"
     resources :banners
@@ -14,8 +15,11 @@ Rails.application.routes.draw do
   resources :services
   resources :posts
 
-  get "about",            to: "pages#about"
-  get "contact",          to: "pages#contact"
+  get    "about",    to: "pages#about"
+  get    "contact",  to: "pages#contact"
+  get    "login",    to: "sessions#new"
+  post   "login",    to: "session#create"
+  delete "logout",   to: "session#destroy"
   
   # get "blog",             to: "posts#index" 
   # get "members",          to: "members#index"
