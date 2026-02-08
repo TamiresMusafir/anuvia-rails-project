@@ -18,8 +18,8 @@ Rails.application.routes.draw do
   get    "about",    to: "pages#about"
   get    "contact",  to: "pages#contact"
   get    "login",    to: "sessions#new"
-  post   "login",    to: "session#create"
-  delete "logout",   to: "session#destroy"
+  post   "login",    to: "sessions#create"
+  delete "logout",   to: "sessions#destroy"
   
   # get "blog",             to: "posts#index" 
   # get "members",          to: "members#index"
