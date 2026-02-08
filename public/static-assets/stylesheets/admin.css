@@ -51,6 +51,11 @@
 }
 
 .sidebar-home a {
+	color: white;
+	text-decoration: none;
+}
+
+.sidebar-home a:hover {
 	color: var(--main-light);
 	text-decoration: none;
 }

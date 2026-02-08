@@ -16,10 +16,10 @@
               </div>
               <div class="blog-list">
                 <ul class="d-flex align-items-center list-unstyled">
-                  <!--<li class="me-3">
+                  <li class="me-3">
                     <i class="fa-regular fa-user"></i>
-                    <a href="team-details.html">Rachel Morg</a>
-                  </li>-->
+                    <%= @post.user.name %>
+                  </li>
                   <li class="me-3" style="color: #6c757d;">
                     <i class="fa-regular fa-clock"></i>
                     <%= @post.created_at.strftime("%d/%m/%Y at %H:%M") %>

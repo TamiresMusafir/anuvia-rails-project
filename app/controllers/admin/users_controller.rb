@@ -1,12 +1,10 @@
 class Admin::UsersController < Admin::AdminController
     before_action :authenticate_user!
 
-  # GET /admin/profile
   def profile
     @user = current_user
   end
 
-  # PATCH /admin/profile
   def update_profile
     @user = current_user
     if @user.update(user_params)
@@ -21,6 +19,6 @@ class Admin::UsersController < Admin::AdminController
 
   def user_params
     # Campos que o usuário pode atualizar
-    params.require(:user).permit(:email, :password, :password_confirmation, :image)
+    params.require(:user).permit(:email, :password, :password_confirmation, :image, :name)
   end
 end

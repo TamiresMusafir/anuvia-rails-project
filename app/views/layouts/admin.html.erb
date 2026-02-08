@@ -31,7 +31,7 @@
 				</div>
 
 				<div class="sidebar-home">
-					<%= link_to "Ver site", root_path %>
+					<%= link_to "Visit site", root_path %>
 				</div>
 				<nav class="sidebar-nav">
 					<ul>
@@ -58,8 +58,8 @@
 					<% end %>
 				
 					<div class="btn-group">
-						<button type="button" class="btn btn-secondary btn-sm"><%= current_user.email %></button>
-						<button type="button" class="btn btn-secondary btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<button type="button" class="btn btn-secondary"><%= current_user.name %></button>
+						<button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<span class="sr-only">Toggle Dropdown</span>
 						</button>
 						<div class="dropdown-menu">
