@@ -97,3 +97,45 @@
   object-fit: cover;       
   display: block;        
 }
+
+.mobile-menu-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: var(--main-dark);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  font-size: 20px;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .admin-sidebar {
+    position: fixed;
+    inset: 0; /* top right bottom left */
+    width: 100%;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 2500;
+  }
+
+  .admin-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .admin-content {
+    padding-top: 60px;
+  }
+}
+
+.close-menu {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}

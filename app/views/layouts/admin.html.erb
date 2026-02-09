@@ -24,8 +24,12 @@
 	<body>
 
 		<div class="admin-layout">
-
-			<aside class="admin-sidebar">
+			<button id="mobileMenuBtn" class="mobile-menu-btn d-md-none">
+				☰
+			</button>
+			<aside class="admin-sidebar mobile-menu">
+				
+				<button class="close-menu d-md-none">✕</button>
 				<div class="sidebar-header">
 					<h2>Admin</h2>
 				</div>
@@ -86,4 +90,24 @@
 	<script src="/static-assets/javascript/bootstrap.min.js"></script>
 
 	<script src="/static-assets/javascript/back-to-top.js"></script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const btn = document.getElementById("mobileMenuBtn");
+			const menu = document.querySelector(".admin-sidebar");
+
+			if (!btn || !menu) return;
+
+			btn.addEventListener("click", function () {
+				menu.classList.toggle("open");
+			});
+		});
+		document.querySelector(".close-menu")?.addEventListener("click", () => {
+			document.querySelector(".admin-sidebar").classList.remove("open");
+		});
+	</script>
+
+
+
+
 </html>
