@@ -182,11 +182,11 @@
                       <ul class="d-flex justify-content-center align-items-center">
                         <li>
                           <i class="fa-regular fa-user"></i>
-                          <a href="team-details.html">Rachel Morg</a>
+                          <%= post.user.name %>
                         </li>
                         <li style="color: #6c757d;">
                           <i class="fa-regular fa-clock"></i>
-                          <%= post.created_at.strftime("%d/%m/%Y at %H:%M") %>
+                          <%= post.created_at.strftime("%d/%m/%Y") %>
                         </li>
                       </ul>
                     </div>
