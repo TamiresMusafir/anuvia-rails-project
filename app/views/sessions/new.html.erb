@@ -19,7 +19,9 @@
                 <div class="row">
                   <div class="col-md-6">
                     <% if flash[:alert] %>
-                      <p class="lead mb-4"><%= flash[:alert] %></p>
+                      <div class="alert alert-danger mb-4">
+                        <%= flash[:alert] %>
+                      </div>
                     <% end %>
                     <%= form_with url: login_path, method: :post, local: true do |f| %>
                       <div class="mb-2">
