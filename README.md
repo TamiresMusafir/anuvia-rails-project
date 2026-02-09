@@ -85,11 +85,11 @@ This project includes an admin area that requires authentication. After starting
 
 You must be logged in with a valid user account to access this section.
 
-### 1 Creating Users via Rails Console
+### Creating Users via Rails Console
 
 Users can be created directly from the Rails console.
 
-#### 1. Open the Rails console:
+### 1. Open the Rails console:
 
     rails c
     
@@ -121,4 +121,5 @@ Users can be created directly from the Rails console.
 ## 🚧 Project Status
 
 This is a study project and is under active development.
+
 
