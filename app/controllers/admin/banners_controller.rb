@@ -3,7 +3,7 @@ class Admin::BannersController < Admin::AdminController
 
   # GET /banners or /banners.json
   def index
-    @banners = Banner.all
+    @banners = Banner.order(created_at: :desc)
   end
 
   # GET /banners/1 or /banners/1.json
