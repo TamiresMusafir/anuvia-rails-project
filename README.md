@@ -79,6 +79,46 @@ SQLite is used as the development database.
 
 ---
 
+## 🔐 Admin Access & User Management
+
+This project includes an admin area that requires authentication. After starting the server, you can access the admin. Follow theses steps to acess:
+
+You must be logged in with a valid user account to access this section.
+
+### 1 Creating Users via Rails Console
+
+Users can be created directly from the Rails console.
+
+#### 1. Open the Rails console:
+
+    rails c
+    
+### 2. Create a new user:
+
+    User.create!(
+      email: "user@example.com",
+      password: "password123",
+      password_confirmation: "password123",
+      name: "User"
+    )
+
+### 3. Verifying Users
+
+#### 3.1 To list all users:
+
+    User.all
+    
+#### 3.2 To find a user by email:
+
+    User.find_by(email: "admin@example.com")
+
+#### 3 Acess the Admin Painel:
+
+    http://localhost:3000/admin
+    
+---
+
 ## 🚧 Project Status
 
 This is a study project and is under active development.
+
