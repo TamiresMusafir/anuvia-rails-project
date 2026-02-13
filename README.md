@@ -31,8 +31,8 @@ This project uses **RVM (Ruby Version Manager)** to manage Ruby versions.
 
 #### 1.3 Install Ruby (the version of this project):
 
-    rvm install 3.4.1
-    rvm use 3.4.1 
+    rvm install 3.1.0
+    rvm use 3.1.0
     ruby -v
 
 ### 2. Install Bundler
@@ -122,6 +122,7 @@ Users can be created directly from the Rails console.
 ## 🚧 Project Status
 
 This is a study project and is under active development.
+
 
 
 
