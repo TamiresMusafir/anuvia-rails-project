@@ -6,5 +6,5 @@ class Service < ApplicationRecord
 						length: {minimum: 4, maximum: 50}
 
 	validates :text_field1, :text_field2, :text_field3,
-						presence: {message: "connot be blank"}
+						length: {maximum: 200}
 end
