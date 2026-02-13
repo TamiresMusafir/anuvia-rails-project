@@ -21,6 +21,7 @@ This project uses **RVM (Ruby Version Manager)** to manage Ruby versions.
 
 #### 1.1 Install RVM:
 
+    gpg --keyserver keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
     \curl -sSL https://get.rvm.io | bash -s stable
 
 #### 1.2 Restart your terminal or run:
@@ -121,5 +122,6 @@ Users can be created directly from the Rails console.
 ## 🚧 Project Status
 
 This is a study project and is under active development.
+
 
 
