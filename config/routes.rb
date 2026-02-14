@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :posts
     get "/profile",       to: "users#profile",  as: :profile
     get "/profile/edit",  to: "users#edit",     as: :edit_profile
-    patch "/profile",     to: "users#profile"
+    patch "/profile",     to: "users#update"
   end
 
   root "pages#index"

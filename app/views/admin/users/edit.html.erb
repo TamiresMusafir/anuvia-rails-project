@@ -5,6 +5,9 @@
 							<h2>Edit <%= current_user.name %> Profile</h2>
 						</div>
             <%= render 'form' %>
+            <div class="card-body text-start pt-3">
+		          <%= link_to "Back", admin_profile_path, class: "btn btn-outline-primary", role: "button" %>
+		        </div>
 					</div>
 				</div>
 			</div>

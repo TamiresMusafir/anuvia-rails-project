@@ -17,9 +17,15 @@ class Admin::UsersController < Admin::AdminController
         format.html { redirect_to admin_profile_path, notice: "Profile updated" }
         format.json { render :profile, status: :update, location: @banner }
       else
-        format.html { render :profile, status: :unprocessable_entity }
+        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :image, :password, :password_confirmation)
   end
 end
