@@ -5,12 +5,16 @@ class Admin::UsersController < Admin::AdminController
     @user = current_user
   end
 
-  def update_profile
+  def edit
+    @user = current_user
+  end
+
+  def update
     @user = current_user
     if @user.update(user_params)
-      redirect_to admin_profile_path, notice: "Perfil atualizado com sucesso"
+      redirect_to admin_profile_path, notice: "Profille sucessfully updated"
     else
-      flash.now[:alert] = "Erro ao atualizar perfil"
+      flash.now[:alert] = "Cannot update profile"
       render :profile, status: :unprocessable_entity
     end
   end
