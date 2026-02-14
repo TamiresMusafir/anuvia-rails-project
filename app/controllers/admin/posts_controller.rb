@@ -2,7 +2,7 @@ class Admin::PostsController < Admin::AdminController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc)
   end
 
   # GET /posts/1 or /posts/1.json

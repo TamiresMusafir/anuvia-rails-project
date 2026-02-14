@@ -5,7 +5,11 @@ class Admin::UsersController < Admin::AdminController
     @user = current_user
   end
 
-  def update_profile
+  def edit
+    @user = current_user
+  end
+
+  def update
     @user = current_user
 
     respond_to do |format|
@@ -16,6 +20,11 @@ class Admin::UsersController < Admin::AdminController
         format.html { render :profile, status: :unprocessable_entity }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
+    if @user.update(user_params)
+      redirect_to admin_profile_path, notice: "Profille sucessfully updated"
+    else
+      flash.now[:alert] = "Cannot update profile"
+      render :profile, status: :unprocessable_entity
     end
   end
 

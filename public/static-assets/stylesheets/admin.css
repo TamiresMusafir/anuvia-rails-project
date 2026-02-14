@@ -143,3 +143,7 @@
 .errors-title li{
   list-style: none;
 }
+
+.profile-info h5 {
+  color: var(--main-dark);
+}

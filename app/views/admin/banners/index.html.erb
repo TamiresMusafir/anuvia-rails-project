@@ -14,15 +14,15 @@
 									<span><%= banner.title %></span>
 
 									<div class="dashboard-actions">
-										<%= link_to admin_banner_path(banner), class: "btn btn-sm btn-outline-primary me-1" do %>
+										<%= link_to admin_banner_path(banner), class: "btn btn-sm btn-outline-primary m-1" do %>
 											<i class="fa-solid fa-eye"></i> Visualizar
 										<% end %>
 
-										<%= link_to edit_admin_banner_path(banner), class: "btn btn-sm btn-outline-warning me-1" do %>
+										<%= link_to edit_admin_banner_path(banner), class: "btn btn-sm btn-outline-warning m-1" do %>
 											<i class="fa-solid fa-pencil"></i> Editar
 										<% end %>
 
-										<%= link_to admin_banner_path(banner), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" do %>
+										<%= link_to admin_banner_path(banner), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger m-1" do %>
 											<i class="fa-solid fa-trash"></i> Deletar
 										<% end %>
 									</div>
