@@ -1,11 +1,11 @@
           <div class="row">
             <%= form_with(model: [:admin, @banner]) do |form| %>
               <% if @banner.errors.any? %>
-                <div class="pb-3" style="color: red">
-                  <h3><%= pluralize(@banner.errors.count, "error") %> prohibited this banner from being saved:</h3>
+                <div class="errors-title">
+                  <h4 class="team-title"><%= pluralize(@banner.errors.count, "error") %> prohibited this banner from being saved:</h4>
                   <ul>
                     <% @banner.errors.each do |error| %>
-                      <li class="text-start"><%= error.full_message %></li>
+                      <li class="alert alert-danger"><%= error.full_message %></li>
                     <% end %>
                   </ul>
                 </div>

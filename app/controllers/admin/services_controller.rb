@@ -24,10 +24,12 @@ class Admin::ServicesController < Admin::AdminController
     @service = Service.new(service_params)
 
     respond_to do |format|
-      if @user.update(user_params)
-        redirect_to admin_profile_path, notice: "Profile updated"
+      if @service.save
+        format.html { redirect_to admin_service_path(@service), notice: "Service was successfully created." }
+        format.json { render :show, status: :created, location: @service }
       else
-        render :profile, status: :unprocessable_entity
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @service.errors, status: :unprocessable_entity }
       end
     end
   end

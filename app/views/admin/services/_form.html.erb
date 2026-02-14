@@ -1,11 +1,11 @@
           <div class="row">
             <%= form_with(model: [:admin, @service]) do |form| %>
               <% if @service.errors.any? %>
-                <div class="pb-3" style="color: red">
-                  <h3><%= pluralize(@service.errors.count, "error") %> prohibited this service from being saved:</h3>
+                <div class="errors-title">
+                  <h4 class="team-title"><%= pluralize(@service.errors.count, "error") %> prohibited this service from being saved:</h4>
                   <ul>
                     <% @service.errors.each do |error| %>
-                      <li class="text-start"><%= error.full_message %></li>
+                      <li class="alert alert-danger"><%= error.full_message %></li>
                     <% end %>
                   </ul>
                 </div>
