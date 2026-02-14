@@ -20,18 +20,6 @@ class Admin::UsersController < Admin::AdminController
         format.html { render :profile, status: :unprocessable_entity }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
-    if @user.update(user_params)
-      redirect_to admin_profile_path, notice: "Profille sucessfully updated"
-    else
-      flash.now[:alert] = "Cannot update profile"
-      render :profile, status: :unprocessable_entity
     end
-  end
-
-  private
-
-  def user_params
-    # Campos que o usuário pode atualizar
-    params.require(:user).permit(:email, :password, :password_confirmation, :image, :name)
   end
 end
