@@ -5,17 +5,11 @@ class User < ApplicationRecord
 
   enum :role, { user: 0, admin: 1 }
 
-  before_validation :strip_email
+  VALID_EMAIL_REGEX = /\A[^@\s]+@[^@\s]+\.com\z/i
 
   validates :email, presence: true,
             uniqueness: { case_sensitive: false, message: "is already taken" },
-            format: { with: URI::MailTo::EMAIL_REGEXP, message: "must be a valid email format" }
+            format: { with: VALID_EMAIL_REGEX, message: "must be a valid email format" }
 
   validates :password, length: { minimum: 6, maximum: 20, message: "needs 6-20 characters" }, allow_nil: true
-
-  private
-
-  def strip_email
-    self.email = email.strip unless email.nil?
-  end
 end

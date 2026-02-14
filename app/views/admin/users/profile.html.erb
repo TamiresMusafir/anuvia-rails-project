@@ -4,64 +4,62 @@
 						<div class="dashboard-title">
 							<h2><%= @user.name %> Profile</h2>
 						</div>
-            <% if @user.errors.any? %>
-              <div class="errors-title">
-                <h4 class="team-title"><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h4>
-                <ul>
-                  <% @user.errors.each do |error| %>
-                    <li class="alert alert-danger"><%= error.full_message %></li>
-                  <% end %>
-                </ul>
-              </div>
-            <% end %>
-            <% if flash[:alert] %>
-              <p class="alert alert-danger"><%= flash[:alert] %></p>
-            <% end %>
-
-            <%= form_with model: @user, url: admin_profile_path, local: true, html: { multipart: true } do |form| %>
-              <div class="mt-4">
-                <div class="row">
-                  <div class="col-md-3">
-                    <% if @user.image.attached? %>
-                      <%= image_tag @user.image, class: "mb-2", size: "100x100", style: "object-fit: cover;" %>
+            <div class="dashboard-body">
+              <% if @user.errors.any? %>
+                <div class="errors-title">
+                  <h4 class="team-title"><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h4>
+                  <ul>
+                    <% @user.errors.each do |error| %>
+                      <li class="alert alert-danger"><%= error.full_message %></li>
                     <% end %>
-                  </div>
-                  
-                  <div class="col-md-4">
+                  </ul>
+                </div>
+              <% end %>
+              <%= form_with model: @user, url: admin_profile_path, local: true, html: { multipart: true } do |form| %>
+                <div class="mt-4">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <% if @user.image.attached? %>
+                        <%= image_tag @user.image, class: "mb-2", size: "100x100", style: "object-fit: cover;" %>
+                      <% end %>
+                    </div>
+                    
+                    <div class="col-md-4">
 
+                    </div>
+                    
                   </div>
-                  
+                  <br>
+                  <div class="row">
+                    <div class="col-md-4 mb-4">
+                      <%= form.label :email, class: "team-title" %>
+                      <%= form.email_field :email, class: "form-control", required: true %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= form.label :name, class: "team-title" %>
+                      <%= form.text_field :name, class: "form-control", required: true %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= form.label :image, "Update Image", class: "team-title" %>
+                      <label class="btn btn-secondary w-100">Choose image
+                        <%= form.file_field :image, class: "d-none" %>
+                      </label>
+                    </div>
+                    <div class="col-md-6">
+                      <%= form.label :password, "New Password", class: "team-title" %>
+                      <%= form.password_field :password, class: "form-control", autocomplete: "new-password" %>
+                    </div>
+                    <div class="col-md-6">
+                      <%= form.label :password_confirmation, "Password Confirmation", class: "team-title" %>
+                      <%= form.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
+                    </div>
+                  </div>
                 </div>
-                <br>
-                <div class="row">
-                  <div class="col-md-4 mb-4">
-                    <%= form.label :email, class: "team-title" %>
-                    <%= form.email_field :email, class: "form-control", required: true %>
-                  </div>
-                  <div class="col-md-4">
-                    <%= form.label :name, class: "team-title" %>
-                    <%= form.text_field :name, class: "form-control", required: true %>
-                  </div>
-                  <div class="col-md-4">
-                    <%= form.label :image, "Update Image", class: "team-title" %>
-                    <label class="btn btn-secondary w-100">Choose image
-                      <%= form.file_field :image, class: "d-none" %>
-                    </label>
-                  </div>
-                  <div class="col-md-6">
-                    <%= form.label :password, "New Password", class: "team-title" %>
-                    <%= form.password_field :password, class: "form-control", autocomplete: "new-password" %>
-                  </div>
-                  <div class="col-md-6">
-                    <%= form.label :password_confirmation, "Password Confirmation", class: "team-title" %>
-                    <%= form.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
-                  </div>
+                <div class="mt-4 text-center">
+                  <%= form.submit "Save Changes", class: "btn btn-secondary" %>
                 </div>
-              </div>
-              <div class="mt-4 text-center">
-                <%= form.submit "Save Changes", class: "btn btn-secondary" %>
-              </div>
-            <% end %>
+              <% end %>
+            </div>
 					</div>
 				</div>
 			</div>
