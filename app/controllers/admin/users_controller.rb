@@ -7,11 +7,15 @@ class Admin::UsersController < Admin::AdminController
 
   def update_profile
     @user = current_user
-    if @user.update(user_params)
-      redirect_to admin_profile_path, notice: "Perfil atualizado com sucesso"
-    else
-      flash.now[:alert] = "Erro ao atualizar perfil"
-      render :profile, status: :unprocessable_entity
+
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to admin_profile_path, notice: "Profile updated" }
+        format.json { render :profile, status: :update, location: @banner }
+      else
+        format.html { render :profile, status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
     end
   end
 

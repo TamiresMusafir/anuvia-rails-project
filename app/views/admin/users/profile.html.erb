@@ -2,8 +2,18 @@
 				<div class="dashboard-section">
 					<div class="dashboard-container">
 						<div class="dashboard-title">
-							<h2><%= current_user.name %> Profile</h2>
+							<h2><%= @user.name %> Profile</h2>
 						</div>
+            <% if @user.errors.any? %>
+              <div class="errors-title">
+                <h4 class="team-title"><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h4>
+                <ul>
+                  <% @user.errors.each do |error| %>
+                    <li class="alert alert-danger"><%= error.full_message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
             <% if flash[:alert] %>
               <p class="alert alert-danger"><%= flash[:alert] %></p>
             <% end %>
