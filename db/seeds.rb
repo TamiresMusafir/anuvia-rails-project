@@ -8,9 +8,17 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-User.find_or_initialize_by(email: "admin@admin.com").tap do |user|
-  user.name = "Administrador"
-  user.password = "123456"
-  user.password_confirmation = "123456"
-  user.save!
+users = [
+  {
+    name: "Administrador",
+    email: "admin@admin.com",
+    password: "123456",
+    password_confirmation: "123456",
+  }
+]
+
+users.each do |user_attrs|
+  User.find_or_create_by!(email: user_attrs[:email]) do |user|
+    user.assign_attributes(user_attrs)
+  end
 end
