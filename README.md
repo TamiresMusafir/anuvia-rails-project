@@ -142,6 +142,11 @@ Check the credentails on db/seeds.rb
 
 This is a study project and is under active development.
 
+Acess the Production Website Test:
+
+https://anuvia-rails-project.onrender.com
+
+
 
 
 
