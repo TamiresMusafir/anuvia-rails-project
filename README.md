@@ -132,7 +132,7 @@ Check the credentails on db/seeds.rb
 
     rake db:seed
 
-#### 4 Acess the Admin Painel:
+### 4. Acess the Admin Painel:
 
     http://localhost:3000/admin
     
@@ -145,6 +145,7 @@ This is a study project and is under active development.
 Acess the Production Website Test:
 
 https://anuvia-rails-project.onrender.com
+
 
 
 
