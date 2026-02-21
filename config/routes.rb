@@ -42,6 +42,9 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
-  match "*path",     to: "errors#not_found", via: :all
+  match "*path",
+      to: "errors#not_found",
+      via: :all,
+      constraints: ->(req) { !req.path.start_with?("/rails") }
   
 end
