@@ -24,6 +24,8 @@ gem "jbuilder"
 gem "byebug"
 # Gem for user
 gem "bcrypt", "~> 3.1.7"
+# Cloudinary for production
+gem "cloudinary"
 
 # Gem for photo validation
 # Use Redis adapter to run Action Cable in production
