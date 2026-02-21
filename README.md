@@ -11,7 +11,7 @@ Web application developed with **Ruby on Rails**, created for study, practice, a
 This project requires a basic Ruby on Rails environment.  
 Below is a simple guide to get everything ready.
 
-> ⚠️ If you already have **Ruby**, **Rails**, and **Bundler** installed, you can skip this section to step 5.
+> ⚠️ If you already have **Ruby**, **Rails**, **Bundler** and **Docker** installed, you can skip this section to step 5.
 
 ---
 
@@ -49,12 +49,13 @@ Install Rails using RubyGems:
     gem install rails
     rails -v
 
-### 4. Install SQLite
+### 4. Install Docker
 
-SQLite is used as the development database.
-> SQLite installation command may vary depending on your operating system.
+Check if docker is installed:
 
-    sudo apt install sqlite3 libsqlite3-dev
+    docker -v
+
+If it's not, install it on https://docs.docker.com/engine/install/ubuntu/
 
 ### 5. Clone the repository:
 
@@ -70,14 +71,26 @@ SQLite is used as the development database.
     rails db:create
     rails db:migrate
 
-### 8. Start the server:
+### 8. Start the docker:
 
+    cd docker
+    sudo docker compose up
+
+### 9. Start the Application:
+
+    cd ..
     rails s
 
-### 9. Access it in your browser:
+### 10. Access it in your browser:
 
     http://localhost:3000
 
+### 11. Acess pgAdmin:
+
+Check the credentials on docker-compose.yml 
+
+    http://127.0.0.1:8080
+    
 ---
 
 ## 🔐 Admin Access & User Management
@@ -88,7 +101,7 @@ You must be logged in with a valid user account to access this section.
 
 ### Creating Users via Rails Console
 
-Users can be created directly from the Rails console.
+Users can be created directly from the Rails console or running seed
 
 ### 1. Open the Rails console:
 
@@ -113,7 +126,13 @@ Users can be created directly from the Rails console.
 
     User.find_by(email: "admin@example.com")
 
-#### 3 Acess the Admin Painel:
+#### 3.3 To running seed:
+
+Check the credentails on db/seeds.rb
+
+    rake db:seed
+
+#### 4 Acess the Admin Painel:
 
     http://localhost:3000/admin
     
@@ -122,6 +141,7 @@ Users can be created directly from the Rails console.
 ## 🚧 Project Status
 
 This is a study project and is under active development.
+
 
 
 
