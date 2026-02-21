@@ -66,19 +66,19 @@ If it's not, install it on https://docs.docker.com/engine/install/ubuntu/
 
     bundle install
 
-### 7. Create the database and run the migrations:
-
-    rails db:create
-    rails db:migrate
-
-### 8. Start the docker:
+### 7. Start the docker:
 
     cd docker
     sudo docker compose up
 
-### 9. Start the Application:
+### 8. Create the database and run the migrations:
 
     cd ..
+    rails db:create
+    rails db:migrate
+
+### 9. Start the Application:
+
     rails s
 
 ### 10. Access it in your browser:
@@ -141,6 +141,7 @@ Check the credentails on db/seeds.rb
 ## 🚧 Project Status
 
 This is a study project and is under active development.
+
 
 
 
