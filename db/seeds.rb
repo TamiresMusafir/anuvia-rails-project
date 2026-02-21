@@ -14,6 +14,12 @@ users = [
     email: "admin@admin.com",
     password: "123456",
     password_confirmation: "123456",
+  },
+  {
+    name: "User",
+    email: "user@user.com",
+    password: "tv4kecontrole",
+    password_confirmation: "tv4kecontrole",
   }
 ]
 
