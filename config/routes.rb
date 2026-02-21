@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   get    "login",    to: "sessions#new"
   post   "login",    to: "sessions#create"
   delete "logout",   to: "sessions#destroy"
+
+  match "*path",     to: "errors#not_found", via: :all
   
   # get "blog",             to: "posts#index" 
   # get "members",          to: "members#index"
