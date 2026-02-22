@@ -289,7 +289,7 @@ a:hover {
   position: absolute;
   margin: auto;
   top: 50%;
-  left: 40%;
+  left: 42%;
   right: auto;
   transform: translate(-50%, -50%);
   color: var(--main-dark);
@@ -346,7 +346,7 @@ a:hover {
     font-size: 1em; 
   }
   .carousel-text h1 {
-    font-size: 2em; 
+    font-size: 1.7em; 
   }
   .carousel-button .btn {
     font-size: 0.9em !important;
@@ -505,7 +505,6 @@ a:hover {
 
 .team-title {
   font-weight: bold;
-  color: var(--main-dark)
 }
 
 .team-subtitle {
