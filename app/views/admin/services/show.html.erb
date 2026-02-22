@@ -23,10 +23,10 @@
             </div>
           </div>
           <div class="card-body text-start pt-3">
-            <%= link_to "Back to services", admin_services_path, class: "btn btn-outline-primary", role: "button" %>
-            <%= link_to "Edit #{@service.title}", edit_admin_service_path(@service), class: "btn btn-outline-primary", role: "button" %>
-            <%= link_to "View #{@service.title} Page", @service, class: "btn btn-outline-primary", role: "button" %>
-            <%= button_to "Delete #{@service.title}", admin_service_path(@service), method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2", role: "button" %>
+            <%= link_to "Back to services", admin_services_path, class: "btn btn-outline-primary mb-1", role: "button" %>
+            <%= link_to "Edit #{@service.title}", edit_admin_service_path(@service), class: "btn btn-outline-primary mb-1", role: "button" %>
+            <%= link_to "View #{@service.title} Page", @service, class: "btn btn-outline-primary mb-1", role: "button" %>
+            <%= button_to "Delete #{@service.title}", admin_service_path(@service), method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2 mb-1", role: "button" %>
           </div>
         </div>
       </div>

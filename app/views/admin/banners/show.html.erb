@@ -22,10 +22,10 @@
           </div>
 
           <div class="card-body text-start pt-3">
-            <%= link_to "Back to Banners", admin_banners_path, class: "btn btn-outline-primary", role: "button" %>
-            <%= link_to "Edit this Banner", edit_admin_banner_path(@banner), class: "btn btn-outline-primary", role: "button" %>
-            <%= link_to "View this Banner", @banner, class: "btn btn-outline-primary", role: "button" %>
-            <%= button_to "Delete this Banner", admin_banner_path(@banner), method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2", role: "button" %>
+            <%= link_to "Back to Banners", admin_banners_path, class: "btn btn-outline-primary mb-1", role: "button" %>
+            <%= link_to "Edit this Banner", edit_admin_banner_path(@banner), class: "btn btn-outline-primary mb-1", role: "button" %>
+            <%= link_to "View this Banner", @banner, class: "btn btn-outline-primary mb-1", role: "button" %>
+            <%= button_to "Delete this Banner", admin_banner_path(@banner), method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2 mb-1", role: "button" %>
           </div>
         </div>
       </div>

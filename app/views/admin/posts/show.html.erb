@@ -36,10 +36,10 @@
             </div>
           </div>
           <div class="card-body text-start pt-3">
-            <%= link_to "Back to Posts", admin_posts_path, class: "btn btn-outline-primary", role: "button" %>
-            <%= link_to "Edit this Post", edit_admin_post_path(@post), class: "btn btn-outline-primary", role: "button" %>
-            <%= link_to "View this Post Page", @post, class: "btn btn-outline-primary", role: "button" %>
-            <%= button_to "Delete This Post", admin_post_path(@post), method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2", role: "button" %>
+            <%= link_to "Back to Posts", admin_posts_path, class: "btn btn-outline-primary mb-1", role: "button" %>
+            <%= link_to "Edit this Post", edit_admin_post_path(@post), class: "btn btn-outline-primary mb-1", role: "button" %>
+            <%= link_to "View this Post Page", @post, class: "btn btn-outline-primary mb-1", role: "button" %>
+            <%= button_to "Delete This Post", admin_post_path(@post), method: :delete, data: {turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-2 mb-1", role: "button" %>
           </div>
         </div>
       </div>
