@@ -513,11 +513,9 @@ a:hover {
 }
 
 .card-team{
-  width: 25% !important;
-  height: auto;
-  border: 0px solid rgba(0,0,0,.125) !important;
-  margin-bottom: 30px ;
-  text-align: center;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 .fa-brands {
@@ -548,7 +546,9 @@ a:hover {
 }
 
 .card-services {
-  margin-top: 20px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .services-content {

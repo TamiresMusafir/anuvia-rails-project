@@ -6,7 +6,7 @@
             <% @banners.each_with_index do |banner, index| %>
               <div class="carousel-item <%= 'active' if index == 0 %>">
                 <% if banner.image.attached? %>
-                  <%= image_tag banner.image, class: "d-block w-100" %>
+                  <%= image_tag banner.image, class: "d-block w-100 card-services" %>
                 <% end %>
                 <div class="container">
                   <div class="carousel-text">
@@ -90,7 +90,7 @@
                 <div class="card shadow border-0">
                   <% if member.image.attached? %>
                     <%= link_to member do %>
-                      <%= image_tag member.image, class: "img-fluid rounded shadow", width: 300 %>
+                      <%= image_tag member.image, class: "img-fluid rounded shadow card-services", width: 300 %>
                     <% end %>
                   <% end %>
                   <div class="card-body text-center">
@@ -130,7 +130,7 @@
                 <div class="card shadow border-0">
                   <% if service.image.attached? %>
                     <%= link_to service_path(service) do %>
-                      <%= image_tag service.image, class: "img-fluid rounded shadow" %>
+                      <%= image_tag service.image, class: "img-fluid rounded shadow card-services" %>
                     <% end %>
                   <% end %>
                   <div class="card-body text-center">

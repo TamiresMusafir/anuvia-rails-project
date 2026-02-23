@@ -24,7 +24,7 @@
                 <div class="card shadow border-0">
                   <% if member.image.attached? %>
                     <%= link_to member_path(member) do %>
-                      <%= image_tag member.image, class: "img-fluid rounded shadow", width: 300 %>
+                      <%= image_tag member.image, class: "img-fluid rounded shadow card-team", width: 300 %>
                     <% end %>
                   <% end %>
                   <div class="card-body text-center">
